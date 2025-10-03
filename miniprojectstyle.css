@@ -1,65 +1,235 @@
 *{
-    color: red;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
 }
-
-h1, h2, h3, h4, h5, h6, span{
-    color: #242424;
-    text-align: center;
-    line-height: 1.25;
-}
-
-h1{
-    color: red;
-}
-
-p{
-    line-height: 1.5;
-    font-size: 16px;
-}
-
-/*NAVIGATION BAR*/
 
 nav{
-    height: 100px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 16px;
+    background-color: #cafdff;
+}
+
+header{
+    background-color: #eadcff;
+    height: calc(100vh-70px);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 72px;
+}
+
+.subheader{
+    font-size: 36px;
+    margin: 16px 0 24px 0;
+}
+
+button{
+    background-color: #05c7cf;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+p{
+    font-size: 36px;
+}
+
+a{
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo{
+    width: 300px;
+}
+
+ul{
+    display: flex;
 }
 
 li{
     list-style-type: none;
+    padding-left: 16px;
 }
 
-.nav__link--list{
+.row{
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.nav__link--anchor{
-    margin: 0 12px;
-    color: #242424;
-    text-decoration: none;
-    font-weight: 700;
+#about,
+#discord,
+#contact,
+footer{
+    padding: 48px 0;
 }
 
-.nav__link--anchor-primary{
-    background-color: #6030b1;
-    padding: 8px 20px;
-    border-radius: 50px;
-    color: white;
-    transition: all 300ms ease;
+/*
+
+ABOUT
+
+*/
+
+#about{
+    background-color: #f8ffdc;
 }
 
-.nav__link--anchor-primary:hover {
-    background-color: #5d3eff;
+h2{
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
-.personal_logo{
-    font-size: 24px;
-    color: #6030b1;
-    margin: 0 12px;
-    font-weight: bold;
+.section__description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.section__description--wrapper{
+    width: 60%;
+}
+
+.section__description--para{
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.about__img--wrapper{
+    width: 40%;
+}
+
+img{
+    width: 100%;
+}
+
+.section__description--para, 
+.about__img--wrapper{
+    padding: 0 24px;
+}
+
+#discord{
+    background-color: #cefeff;
+}
+
+
+/*
+
+CONTACT
+
+*/
+
+#contact{
+    background-color: #dce9ff;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px;
+}
+
+input, textarea{
+    margin-bottom: 24px;
+    font-size: 20px;
+}
+
+/*
+
+FOOTER
+
+*/
+
+footer{
+    background-color: #aaf5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__logo{
+    max-width: 480px;
+}
+
+.footer__links{
+    margin-bottom: 32px;
+}
+
+.footer__link{
+    padding: 0 16px;
+}
+
+
+@media (max-width: 728px){
+    .row{
+        flex-direction: column;
+    }
+
+    .home__description{
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home__description--button{
+        
+    }
+
+    h1{
+        font-size: 60 px;
+        text-align: center;
+    }
+
+    .subheader{
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .section__description{
+        flex-direction: column;
+    }
+
+    .section__description--wrapper{
+        width: 100%;
+    }
+
+    .about__img--wrapper{
+        width: 100%;
+    }
+
+    #discord .section__description{
+        flex-direction: column-reverse;
+    }
+
+    footer{
+        padding: 48px 24px;
+    }
+
+    .footer__logo{
+        max-width: 360px;
+    }
+
+    .footer__link{
+        padding: 0 4px;
+        font-size: 18px;
+    }
+}
