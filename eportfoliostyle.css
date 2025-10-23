@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 *{
+    font-family: 'Lato', sans-serif;
     padding:0;
     margin:0;
     box-sizing: border-box;
@@ -19,6 +22,16 @@ li{
     list-style-type: none;
 }
 
+a{
+    text-decoration: none;
+    position: relative;
+    transition: opacity 300ms ease;
+}
+
+i:hover{
+    opacity: 0.7;
+}
+
 .row{
     width: 100%;
     max-width: 800px;
@@ -29,6 +42,7 @@ li{
 .container {
     padding: 50px 0;
 }
+
 
 #about-me{
     min-height: 100vh;
@@ -90,6 +104,30 @@ nav{
     transition: all 300ms ease;
 }
 
+.link__hover-effect:after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: -3px;
+    right: 0;
+    transition: all 300ms;
+}
+
+.link__hover-effect:hover:after{
+    width: 100%;
+    left: 0;
+}
+
+.link__hover-effect--white:after{
+    background-color: white;
+}
+
+.link__hover-effect--black:after{
+    background-color: black;
+}
+
+
 /* ABOUT ME */
 
 .flex{
@@ -125,6 +163,26 @@ img{
     text-align: center;
     animation: fade-up 300ms;
 }
+
+.about-me__info--title{
+    margin-bottom: 16px;
+    animation: fade-up 650ms 400ms backwards;
+    
+}
+
+
+.about-me__info--para{
+    margin-bottom: 16px;
+    animation: fade-up 650ms 600ms backwards;
+    
+}
+
+.about-me__links{   
+    margin-bottom: 16px;
+    animation: fade-up 650ms 800ms backwards;
+    
+}
+
 
 @keyframes fade-up {
     0%{
@@ -170,6 +228,16 @@ img{
 
 .about-me__img{
     width: 100%;
+    animation: fade-in 1200ms 800ms backwards;
+}
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 .about-me__container{
@@ -196,6 +264,24 @@ img{
     flex: 1;
     display: flex;
     align-items: center;
+}
+
+
+.wave{
+    display: inline-block;
+    animation: animate-wave 500ms infinite ease-in-out;
+}
+
+@keyframes animate-wave {
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(30deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
 }
 
 /*
@@ -284,6 +370,7 @@ TECH STACK
     background-color: #1c1d25;
     opacity: 0;
     z-index: 2;
+    transition: opacity 450ms ease;
 }
 
 .project__description{
@@ -311,6 +398,12 @@ TECH STACK
 .project__description--link {
     text-align: left;
     color: #fff;
+    text-decoration: none;
+}
+
+.project__description--link {
+    font-size: 20px;
+    margin-right: 16px;
 }
 
 .project:hover .project__wrapper:before{
@@ -326,6 +419,7 @@ TECH STACK
 .project:hover .project__description{
     opacity: 1;
     transform: translateY(-50%);
+    
 }
 
 
@@ -343,8 +437,33 @@ footer{
     padding: 8% 0;
 }
 
+.footer__anchor{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.footer__anchor:hover .footer__logo--popper{
+    transform: translateX(60px);
+    opacity: 1;
+}
+
+.footer__social--link,
+.footer__copyright,
+.footer__logo--popper{
+    color: white;
+}
+
 .footer__logo{
     margin-bottom: 20px;
+}
+
+.footer__logo--popper{
+    position: absolute;
+    right: 0;
+    top: 30px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 300ms;
 }
 
 .footer__logo--img{
@@ -357,6 +476,11 @@ footer{
     display: flex;
     justify-content: space-evenly;
     max-width: 500px;
+    margin-bottom: 24px;
+}
+
+.footer__copyright{
+    color: white;
 }
 
 @media(max-width:768px){
@@ -366,6 +490,10 @@ footer{
 
     h1{
         font-size: 28px;
+    }
+
+    .about-me__link{
+        font-size: 16px;
     }
 
     .about-me__info--para{
@@ -384,6 +512,14 @@ footer{
 
     .about-me__img--container{
         width: 75%;
+    }
+
+    .language{
+        width: calc(100%/3);
+    }
+
+    .language__list{
+        justify-content: center;
     }
 }
 
