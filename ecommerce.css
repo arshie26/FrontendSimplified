@@ -99,6 +99,7 @@ nav{
 
 .nav__link{
     list-style-type: none;
+    text-decoration: none;
     margin: 0 20px;
     font-size: 20px;
     color: purple;
@@ -140,6 +141,12 @@ nav{
 .menu__link{
     font-size: 40px;
     color: white;
+    text-decoration: none;
+}
+
+.menu__link:hover{
+    
+    text-decoration: underline;
 }
 
 
@@ -408,10 +415,12 @@ footer{
     width: 10%;
     margin: 0 auto;
     display: flex;
+    justify-content: center;
 }
 
 .footer__logo--img{
     filter: grayscale(1) invert(1);
+    width: 160px;
 }
 
 .footer__list{
@@ -426,6 +435,10 @@ footer{
     color: #fff;
     padding: 0 8px;
     text-decoration: none;
+}
+
+.footer__link:hover{
+    text-decoration: underline;
 }
 
 @media (max-width: 768px){
@@ -454,6 +467,8 @@ footer{
     .nav__link{
         display: none;
     }
+
+
 
     .btn__menu{
         display: block;
